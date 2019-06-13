@@ -2,9 +2,11 @@
 $(document).on('click','#start', function() {
     game.startGame();
 })
-// running timer
 
-// post questions to page
+$(document).on('click', '#reset', function () {
+    game.reset()
+})
+
 var questions = [
     {
 	question: "When was The Lego company founded?",
@@ -58,28 +60,130 @@ var questions = [
 },] 
 
 // object to run game functions
+
 var game = {
     correct: 0,
     incorrect: 0,
     counter: 120,
 
-    countdown: function (){
+    countdown: function () {
         game.counter--
         $('#counter-number').html(game.counter)
         if (game.counter === 0) {
             console.log('Times Up')
-            game.timeUp()
+            game.timeUP()
         }
     },
 
-    startGame:function () {
+    startGame: function () {
         timer=setInterval(game.countdown, 1000)
         $('#start').remove()
         for (var i = 0; i < questions.length; i++) {
             $("#panel").append('<h2>' + question + '</h2>')
-            for (var i = 0; i < questions.length; i++)
+            for (var j = 0; j < questions.length; j++) {
+                $("#panel").append('<input type="radio" name="question' + '-' + i + '" value="' + questions[i].answers[j] + '">' + questions[i].answers[j])
+            }
         }
-    }
+    },
+
+    timeUP: function () {
+        clearInterval (timer)
+        alert('Times Up!')
+    },
+
+    reset: function () {
+        location.reload()
+    },
+
+    done: function () {
+        $.each($("input[name='answer0']:checked"), function () {
+            console.log(inside)
+            if ($(this).val() == questions[1].correctAnswer){
+                game.correct++
+            } else {
+                game.incorrect++
+            }
+        })
+        $.each($("input[name='answer1']:checked"), function () {
+            console.log(inside)
+            if ($(this).val() == questions[1].correctAnswer){
+                game.correct++
+            } else {
+                game.incorrect++
+            }
+        })
+        $.each($("input[name='answer2']:checked"), function () {
+            console.log(inside)
+            if ($(this).val() == questions[1].correctAnswer){
+                game.correct++
+            } else {
+                game.incorrect++
+            }
+        })
+        $.each($("input[name='answer3']:checked"), function () {
+            console.log(inside)
+            if ($(this).val() == questions[1].correctAnswer){
+                game.correct++
+            } else {
+                game.incorrect++
+            }
+        })
+        $.each($("input[name='answer4']:checked"), function () {
+            console.log(inside)
+            if ($(this).val() == questions[1].correctAnswer){
+                game.correct++
+            } else {
+                game.incorrect++
+            }
+        })
+        $.each($("input[name='answer5']:checked"), function () {
+            console.log(inside)
+            if ($(this).val() == questions[1].correctAnswer){
+                game.correct++
+            } else {
+                game.incorrect++
+            }
+        })
+        $.each($("input[name='answer6']:checked"), function () {
+            console.log(inside)
+            if ($(this).val() == questions[1].correctAnswer){
+                game.correct++
+            } else {
+                game.incorrect++
+            }
+        })
+        $.each($("input[name='answer7']:checked"), function () {
+            console.log(inside)
+            if ($(this).val() == questions[1].correctAnswer){
+                game.correct++
+            } else {
+                game.incorrect++
+            }
+        })
+        $.each($("input[name='answer8']:checked"), function () {
+            console.log(inside)
+            if ($(this).val() == questions[1].correctAnswer){
+                game.correct++
+            } else {
+                game.incorrect++
+            }
+        })
+        $.each($("input[name='answer9']:checked"), function () {
+            console.log(inside)
+            if ($(this).val() == questions[1].correctAnswer){
+                game.correct++
+            } else {
+                game.incorrect++
+            }
+        })
+        game.result()
+    },
+        result: function () {
+            clearInterval(timer)
+            $("#panel").empty()
+            $("#panel").append("Correct answers: " + game.correct + "<br/>")
+            $("#panel").append("Incorrect answers: " + game.incorrect)
+        }
 }
 
 

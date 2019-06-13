@@ -19,16 +19,23 @@
     </header>
 
     <main>
-        <form> 
-            <div id="question">
-                <p>"When was The Lego company founded?"</p>
-                <input type="radio" name="gender" value=""> 1937
-                <input type="radio" name="gender" value=""> 1932
-                <input type="radio" name="gender" value=""> 1951 
-                <input type="radio" name="gender" value=""> 1926  
+        <div id="wrapper">
+            <div id="counter-number">You have: 60 seconds to complete quiz</div>
+            <div id="display">00:00</div>
+            <div id="buttons">
+                <div id="panel">
+                    <button id="start">Start Game</button>
+                    <button id="start-over">Reset Game</button>
+                </div>
             </div>
-            
-        </form> 
+        </div>
+
+        <div id="endGame">
+            <div id="done"><h2>Game Over!</h2></div>
+            <div id="unanswered"><h2>Unanswered: 0</h2></div>
+            <div id="incorrect">Incorrect Answers</div>
+            <div id="correct">Correct Answers: 0</div>
+        </div>
     </main>
 
     <footer>
