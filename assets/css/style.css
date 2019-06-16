@@ -10,6 +10,7 @@ body {
       "header header header"
       "main main main"
       "footer footer footer";
+    grid-template-rows: auto 1fr auto;
 }
 
 header {
@@ -18,8 +19,12 @@ header {
 }
 
 header,
-  #question,
-  footer {
+  h2,
+  #endGame,
+  h2,
+  footer,
+  button, 
+  #panel {
       /* main content bubble style */
     margin: 10px;
     padding: 20px;
@@ -33,7 +38,7 @@ header,
     box-shadow: 20px 25px 40px #312c2c;
 }
 
-h2 { 
+h3 { 
     font-size: 25px;
 }
 

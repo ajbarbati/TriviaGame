@@ -1,11 +1,14 @@
 // learn how to make a start button
 $(document).on('click','#start', function() {
-    game.startGame();
+    console.log("Start")
+    game.startGame()
 })
 
 $(document).on('click', '#reset', function () {
     game.reset()
 })
+
+var randomQuestions = Math.floor(Math.random()*(questions))
 
 var questions = [
     {
@@ -76,12 +79,12 @@ var game = {
     },
 
     startGame: function () {
-        timer=setInterval(game.countdown, 1000)
+        timer = setInterval(game.countdown, 1000)
         $('#start').remove()
         for (var i = 0; i < questions.length; i++) {
-            $("#panel").append('<h2>' + question + '</h2>')
-            for (var j = 0; j < questions.length; j++) {
-                $("#panel").append('<input type="radio" name="question' + '-' + i + '" value="' + questions[i].answers[j] + '">' + questions[i].answers[j])
+            $("#panel").append('<h2>' + questions[i].question + '</h2>')
+            for (var j = 0; j < questions[i].answers.length; j++) {
+                $("#panel").append('<div id="answerChoice">' + '<input type="radio" name="question' + '-' + i + '" value="' + questions[i].answers[j] + '">' + questions[i].answers[j] + '</div>')
             }
         }
     },
