@@ -24,7 +24,8 @@ header,
   h2,
   footer,
   button, 
-  #panel {
+  #panel,
+  #submit {
       /* main content bubble style */
     margin: 10px;
     padding: 20px;

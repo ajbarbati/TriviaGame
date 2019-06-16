@@ -8,7 +8,7 @@ $(document).on('click', '#reset', function () {
     game.reset()
 })
 
-var randomQuestions = Math.floor(Math.random()*(questions))
+var randomQuestions = Math.floor(Math.random()* (questions))
 
 var questions = [
     {
@@ -100,7 +100,7 @@ var game = {
 
     done: function () {
         $.each($("input[name='answer0']:checked"), function () {
-            console.log(inside)
+            console.log("inside")
             if ($(this).val() == questions[1].correctAnswer){
                 game.correct++
             } else {
@@ -108,7 +108,7 @@ var game = {
             }
         })
         $.each($("input[name='answer1']:checked"), function () {
-            console.log(inside)
+            console.log("inside")
             if ($(this).val() == questions[1].correctAnswer){
                 game.correct++
             } else {
@@ -116,7 +116,7 @@ var game = {
             }
         })
         $.each($("input[name='answer2']:checked"), function () {
-            console.log(inside)
+            console.log("inside")
             if ($(this).val() == questions[1].correctAnswer){
                 game.correct++
             } else {
@@ -124,7 +124,7 @@ var game = {
             }
         })
         $.each($("input[name='answer3']:checked"), function () {
-            console.log(inside)
+            console.log("inside")
             if ($(this).val() == questions[1].correctAnswer){
                 game.correct++
             } else {
@@ -132,7 +132,7 @@ var game = {
             }
         })
         $.each($("input[name='answer4']:checked"), function () {
-            console.log(inside)
+            console.log("inside")
             if ($(this).val() == questions[1].correctAnswer){
                 game.correct++
             } else {
@@ -140,7 +140,7 @@ var game = {
             }
         })
         $.each($("input[name='answer5']:checked"), function () {
-            console.log(inside)
+            console.log("inside")
             if ($(this).val() == questions[1].correctAnswer){
                 game.correct++
             } else {
@@ -148,7 +148,7 @@ var game = {
             }
         })
         $.each($("input[name='answer6']:checked"), function () {
-            console.log(inside)
+            console.log("inside")
             if ($(this).val() == questions[1].correctAnswer){
                 game.correct++
             } else {
@@ -156,7 +156,7 @@ var game = {
             }
         })
         $.each($("input[name='answer7']:checked"), function () {
-            console.log(inside)
+            console.log("inside")
             if ($(this).val() == questions[1].correctAnswer){
                 game.correct++
             } else {
@@ -164,7 +164,7 @@ var game = {
             }
         })
         $.each($("input[name='answer8']:checked"), function () {
-            console.log(inside)
+            console.log("inside")
             if ($(this).val() == questions[1].correctAnswer){
                 game.correct++
             } else {
@@ -172,19 +172,20 @@ var game = {
             }
         })
         $.each($("input[name='answer9']:checked"), function () {
-            console.log(inside)
+            console.log("inside")
             if ($(this).val() == questions[1].correctAnswer){
                 game.correct++
             } else {
                 game.incorrect++
             }
         })
+        
         game.result()
     },
         result: function () {
             clearInterval(timer)
             $("#panel").empty()
-            $("#panel").append("Correct answers: " + game.correct + "<br/>")
+            $("#panel").append("Correct answers: " + game.correct)
             $("#panel").append("Incorrect answers: " + game.incorrect)
         }
 }
